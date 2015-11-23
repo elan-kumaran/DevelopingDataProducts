@@ -1,0 +1,38 @@
+Regression Model - Predict mpg in mtcars dataset
+========================================================
+author: Elankumaran
+date: 19-Nov-2015
+
+
+How it works?
+========================================================
+- User selects the value for cyclinder (4,6 or 8) 
+- User selects the qsec value from the slider 
+- User selects the wt value from the slider
+- Predicted mpg value changes as the user inpur changes reactively
+- User selected values are also displayed on the main panel
+- Mpg predicted based on the regression model built with the wt,qsec,cyl as predictors
+- Model co-efficients and Model summary are shown on separate tabs
+
+Application Screenshot
+========================================================
+
+Link: http://elankumaran.shinyapps.io/regression
+
+
+Screenshot
+
+![Screenshot](RegressionShiny1.jpg)
+
+Regression Model
+========================================================
+```{r}
+model<-lm(mpg~cyl+wt+qsec,data=mtcars)
+summary(model)
+```
+
+Notes
+========================================================
+- This regression model fit using wt,cyl,qsec is just for demonstration purposes and doesnt mean this is the best fit.
+- The code for this shiny application is available at https://github.com/elan-kumaran/DevelopingDataProducts
+
